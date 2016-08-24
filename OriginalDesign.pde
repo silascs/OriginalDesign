@@ -1,4 +1,4 @@
-int y = 25;
+int y = 0;
 
 
 void setup()
@@ -10,9 +10,9 @@ void draw()
 {
   head();
   face();
-  y = y - 2;
-  if (y < 0){
-  	y = y + 2;
+  y = y + 2;
+  if (y > 25){
+  	y = y - 2;
   }
 }
 void head(){
@@ -22,13 +22,17 @@ void head(){
 }
 void face(){
 	fill(0);
-	ellipse(150, 150, 25, 25);
-	ellipse(250, 150, 25, y);
+	ellipse(175, 150, 25, 25);
+	ellipse(225, 150, 25, y);
 	strokeWeight(4);
 	line(150, 200, 250, 200);
 	fill(255);
 	rect(174, 200, 18, 25);
 	rect(204, 200, 18, 25);
+
+}
+void mousePressed () {
+	y = 0;
 
 }
 
